@@ -23,6 +23,9 @@
 }
 
 .logo-container {
+  position: sticky;
+  top: 0;
+  left: 0;
   height: 12vh;
   background: #0f2f3d;
   background: linear-gradient(
