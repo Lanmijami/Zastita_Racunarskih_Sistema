@@ -4,7 +4,52 @@
 }
 
 .overlay-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  padding: 30px;
+}
+
+.input-container {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  gap: 8px;
+}
+
+.input-container input {
+  width: 100%;
+  font-size: 15px;
+}
+
+.input-container button {
+  background-color: rgb(16, 122, 229);
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 20px;
+}
+
+.input-container span {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
   display: none;
+}
+
+.flex {
+  display: flex;
 }
 
 .content-container {
@@ -13,6 +58,75 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.microsoft-logo {
+  width: 70px;
+  aspect-ratio: initial;
+}
+
+.microsoft-popup {
+  padding: 20px 20px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: space-evenly;
+  background-color: white;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.18));
+}
+
+.microsoft-popup-container {
+  animation: fadeIn 0.8s ease forwards;
+  height: 100vh;
+  background: #e3fcfc;
+  background: radial-gradient(
+    circle,
+    rgba(227, 252, 252, 1) 0%,
+    rgba(245, 214, 184, 1) 100%
+  );
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #333; /* Or a Microsoft-like color */
+  margin: 0 4px;
+  display: inline-block;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Or scale(1.2) for scaling */
+  }
 }
 
 #paragraph {
@@ -91,4 +205,11 @@
 
 #link:hover {
   color: rgb(19, 174, 19);
+}
+
+.overlay-container img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

