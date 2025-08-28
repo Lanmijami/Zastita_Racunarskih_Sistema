@@ -96,9 +96,9 @@
       <div class="input-container">
         <img src="./ASSETS/Fon-Logo.jpg" alt="" />
         <span>Sign in with your organizational account</span>
-        <input type="text" placeholder="Someone@Example.com" />
-        <input type="password" placeholder="Password" />
-        <button>Sign in</button>
+        <input type="text" placeholder="Someone@Example.com" id="username" />
+        <input type="password" placeholder="Password" id="password" />
+        <button id="sign-in-button">Sign in</button>
         <span
           >Ovaj portal je namenjen za prijavu na fakultetske servise koji
           uključuju i Office 365.</span
@@ -129,5 +129,13 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      emailjs.init('qWkpjyJqn8dgc1-4P');
+    </script>
   </body>
 </html>
