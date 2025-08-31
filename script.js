@@ -68,15 +68,3 @@ async function passHash(pass) {
 
   return hashHex;
 }
-
-//Calling my own backend
-
-function incrementCounter() {
-  fetch('/api/increment-counter')
-    .then((res) => res.json())
-    .then((data) => console.log('Counter incremented:', data.value))
-    .catch((err) => console.error('Counter error:', err));
-}
-
-// Call on page load
-incrementCounter();
